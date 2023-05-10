@@ -1,4 +1,4 @@
-# File: display-image-matplot.py
+# File: display_image_matplot.py
 import cv2 as cv
 import matplotlib.pyplot as plot
 
