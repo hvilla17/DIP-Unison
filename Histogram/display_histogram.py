@@ -1,4 +1,4 @@
-# File: display-histogram.py
+# File: display_histogram.py
 import cv2 as cv
 from matplotlib import pyplot as plot
 
