@@ -1,4 +1,4 @@
-# File: color-to-gray.png
+# File: color_to_gray.png
 
 import cv2 as cv
 import sys
