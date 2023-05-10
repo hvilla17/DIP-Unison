@@ -1,4 +1,4 @@
-# File: display-histogram-color.py
+# File: display_histogram_color.py
 import cv2 as cv
 from matplotlib import pyplot as plot
 
