@@ -1,4 +1,4 @@
-# File: display-video.py
+# File: display_video.py
 import cv2 as cv
 
 clicked = False
