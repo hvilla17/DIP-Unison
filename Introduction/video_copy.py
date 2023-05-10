@@ -1,4 +1,4 @@
-# File: video-copy.py
+# File: video_copy.py
 import cv2 as cv
 
 videoCapture = cv.VideoCapture('MyInputVid.avi')
