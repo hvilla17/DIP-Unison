@@ -1,4 +1,4 @@
-# File: png-to-jpg.py
+# File: png_to_jpg.py
 
 import cv2 as cv
 import sys
