@@ -1,4 +1,4 @@
-# File: video-10s.py
+# File: video_10s.py
 import cv2 as cv
 # differences with previous program are in blue
 cameraCapture = cv.VideoCapture(0)
