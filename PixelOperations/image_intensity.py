@@ -1,4 +1,4 @@
-# File: image-intensity.py
+# File: image_intensity.py
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plot
