@@ -1,4 +1,4 @@
-# File: display-image.py
+# File: display_image.py
 import cv2 as cv
 
 image = cv.imread('MyPic.png')
