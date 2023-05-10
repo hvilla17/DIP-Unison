@@ -1,4 +1,4 @@
-# File: invert-color.py
+# File: invert_color.py
 import cv2 as cv
 
 image = cv.imread('MyPic.png')
