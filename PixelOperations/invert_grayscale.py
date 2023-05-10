@@ -1,4 +1,4 @@
-# File: invert-grayscale.py
+# File: invert_grayscale.py
 import cv2 as cv
 
 image = cv.imread('MyPic.png', cv.IMREAD_GRAYSCALE)
