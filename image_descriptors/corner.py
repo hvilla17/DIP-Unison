@@ -1,6 +1,10 @@
 import cv2 as cv
 
-img = cv.imread('../images/chessboard.png')
+filename = '../images/chessboard.png'
+# filename = '../images/chessboard2.jpg'
+# filename = '../images/simple.jpg'
+
+img = cv.imread(filename)
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 dst = cv.cornerHarris(gray, 2, 23, 0.04)
 
