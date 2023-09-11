@@ -5,8 +5,8 @@ import numpy as np
 image = cv.imread('../images/planet_glow.jpg')
 image_gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 image_gray = cv.medianBlur(image_gray, 5)
-circles = cv.HoughCircles(image_gray, method=cv.HOUGH_GRADIENT, dp=1, minDist=120,
-                          param1=100, param2=30, minRadius=0, maxRadius=0)
+circles = cv.HoughCircles(image_gray, method=cv.HOUGH_GRADIENT_ALT, dp=1, minDist=70,
+                          param1=210, param2=0.9, minRadius=0, maxRadius=0)
 circles = np.uint16(np.around(circles))
 for i in circles[0, :]:
     # draw the outer circle
