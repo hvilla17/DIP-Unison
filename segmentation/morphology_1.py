@@ -1,7 +1,6 @@
 from __future__ import print_function
+
 import cv2 as cv
-import numpy as np
-import argparse
 
 # Taken from the OpenCV samples
 # https://github.com/opencv/opencv/blob/3.4/samples/python/tutorial_code/imgProc/erosion_dilatation/morphology_1.py
@@ -16,26 +15,28 @@ title_erosion_window = 'Erosion Demo'
 title_dilation_window = 'Dilation Demo'
 
 
-## [main]
+# [main]
 def main(image):
     global src
-    src = cv.imread(cv.samples.findFile(image))
+    src = cv.imread(image)
     if src is None:
         print('Could not open or find the image: ', image)
         exit(0)
 
-    cv.namedWindow(title_erosion_window)
+    cv.namedWindow(title_erosion_window, cv.WINDOW_NORMAL)
     cv.createTrackbar(title_trackbar_element_shape, title_erosion_window, 0, max_elem, erosion)
     cv.createTrackbar(title_trackbar_kernel_size, title_erosion_window, 0, max_kernel_size, erosion)
 
-    cv.namedWindow(title_dilation_window)
+    cv.namedWindow(title_dilation_window, cv.WINDOW_NORMAL)
     cv.createTrackbar(title_trackbar_element_shape, title_dilation_window, 0, max_elem, dilatation)
     cv.createTrackbar(title_trackbar_kernel_size, title_dilation_window, 0, max_kernel_size, dilatation)
 
     erosion(0)
     dilatation(0)
     cv.waitKey()
-## [main]
+
+
+# [main]
 
 # optional mapping of values with morphological shapes
 def morph_shape(val):
@@ -47,21 +48,23 @@ def morph_shape(val):
         return cv.MORPH_ELLIPSE
 
 
-## [erosion]
+# [erosion]
 def erosion(val):
     erosion_size = cv.getTrackbarPos(title_trackbar_kernel_size, title_erosion_window)
     erosion_shape = morph_shape(cv.getTrackbarPos(title_trackbar_element_shape, title_erosion_window))
 
-    ## [kernel]
+    # [kernel]
     element = cv.getStructuringElement(erosion_shape, (2 * erosion_size + 1, 2 * erosion_size + 1),
                                        (erosion_size, erosion_size))
-    ## [kernel]
+    # [kernel]
     erosion_dst = cv.erode(src, element)
     cv.imshow(title_erosion_window, erosion_dst)
-## [erosion]
 
 
-## [dilation]
+# [erosion]
+
+
+# [dilation]
 def dilatation(val):
     dilatation_size = cv.getTrackbarPos(title_trackbar_kernel_size, title_dilation_window)
     dilation_shape = morph_shape(cv.getTrackbarPos(title_trackbar_element_shape, title_dilation_window))
@@ -70,12 +73,10 @@ def dilatation(val):
                                        (dilatation_size, dilatation_size))
     dilatation_dst = cv.dilate(src, element)
     cv.imshow(title_dilation_window, dilatation_dst)
-## [dilation]
+
+
+# [dilation]
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Code for Eroding and Dilating tutorial.')
-    parser.add_argument('--input', help='Path to input image.', default='LinuxLogo.jpg')
-    args = parser.parse_args()
-
-    main(args.input)
+    main('../images/LinuxLogo.jpg')

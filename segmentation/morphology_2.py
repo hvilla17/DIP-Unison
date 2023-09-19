@@ -1,7 +1,8 @@
 from __future__ import print_function
-import cv2 as cv
-import numpy as np
+
 import argparse
+
+import cv2 as cv
 
 # Taken from OpenCV samples
 # https://github.com/opencv/opencv/blob/3.4/samples/python/tutorial_code/imgProc/opening_closing_hats/morphology_2.py
@@ -16,6 +17,7 @@ title_trackbar_kernel_size = 'Kernel size:\n 2n + 1'
 title_window = 'Morphology Transformations Demo'
 morph_op_dic = {0: cv.MORPH_OPEN, 1: cv.MORPH_CLOSE, 2: cv.MORPH_GRADIENT, 3: cv.MORPH_TOPHAT, 4: cv.MORPH_BLACKHAT}
 
+
 def morphology_operations(val):
     morph_operator = cv.getTrackbarPos(title_trackbar_operator_type, title_window)
     morph_size = cv.getTrackbarPos(title_trackbar_kernel_size, title_window)
@@ -28,24 +30,21 @@ def morphology_operations(val):
     elif val_type == 2:
         morph_elem = cv.MORPH_ELLIPSE
 
-    element = cv.getStructuringElement(morph_elem, (2*morph_size + 1, 2*morph_size+1), (morph_size, morph_size))
+    element = cv.getStructuringElement(morph_elem, (2 * morph_size + 1, 2 * morph_size + 1), (morph_size, morph_size))
     operation = morph_op_dic[morph_operator]
     dst = cv.morphologyEx(src, operation, element)
     cv.imshow(title_window, dst)
 
-parser = argparse.ArgumentParser(description='Code for More Morphology Transformations tutorial.')
-parser.add_argument('--input', help='Path to input image.', default='LinuxLogo.jpg')
-args = parser.parse_args()
 
-src = cv.imread(cv.samples.findFile(args.input))
+src = cv.imread('../images/j.png')
 if src is None:
-    print('Could not open or find the image: ', args.input)
+    print('Could not open or find the image: ')
     exit(0)
 
-cv.namedWindow(title_window)
-cv.createTrackbar(title_trackbar_operator_type, title_window , 0, max_operator, morphology_operations)
-cv.createTrackbar(title_trackbar_element_type, title_window , 0, max_elem, morphology_operations)
-cv.createTrackbar(title_trackbar_kernel_size, title_window , 0, max_kernel_size, morphology_operations)
+cv.namedWindow(title_window, cv.WINDOW_NORMAL)
+cv.createTrackbar(title_trackbar_operator_type, title_window, 0, max_operator, morphology_operations)
+cv.createTrackbar(title_trackbar_element_type, title_window, 0, max_elem, morphology_operations)
+cv.createTrackbar(title_trackbar_kernel_size, title_window, 0, max_kernel_size, morphology_operations)
 
 morphology_operations(0)
 cv.waitKey()
