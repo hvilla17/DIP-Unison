@@ -3,6 +3,9 @@ import cv2 as cv
 import numpy as np
 import argparse
 
+# Taken from OpenCV samples
+# https://github.com/opencv/opencv/blob/3.4/samples/python/tutorial_code/imgProc/opening_closing_hats/morphology_2.py
+
 morph_size = 0
 max_operator = 4
 max_elem = 2
