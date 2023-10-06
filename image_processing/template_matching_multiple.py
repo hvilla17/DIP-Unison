@@ -9,8 +9,8 @@ from object_detection import non_max_suppression
 threshold = 0.8
 
 # read image and template
-image = cv.imread('../images/card_8_diamonds.png')
-template = cv.imread('../images/card_diamond.png')
+image = cv.imread('../images/card_10_hearts.png')
+template = cv.imread('../images/card_heart.png')
 (tH, tW) = template.shape[:2]
 
 # convert image and template to grayscale
@@ -35,6 +35,7 @@ for (x, y) in zip(x_coordinates, y_coordinates):
                  color=(255, 0, 0), thickness=3)
 
 # show our output image *before* applying non-maxima suppression
+cv.imwrite('tmm-before-nms.jpg', clone)
 cv.imshow("Before NMS", clone)
 cv.waitKey(0)
 
@@ -46,7 +47,7 @@ for (x, y) in zip(x_coordinates, y_coordinates):
     # update our list of rectangles
     rectangles.append((x, y, x + tW, y + tH))
 
-# apply non-maxima suppression to the rectangles
+# apply non-maximum suppression to the rectangles
 pick = non_max_suppression(np.array(rectangles))
 print("[INFO] {} matched locations *after* NMS".format(len(pick)))
 
@@ -58,5 +59,6 @@ for (startX, startY, endX, endY) in pick:
                  color=(255, 0, 0), thickness=3)
 
 # show the output image
+cv.imwrite('tmm-after-nms.jpg', image)
 cv.imshow("After NMS", image)
 cv.waitKey(0)
