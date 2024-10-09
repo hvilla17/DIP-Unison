@@ -7,7 +7,7 @@ from print_keypoint import print_keypoint
 image = cv.imread('../images/home.jpg')
 gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
-sift = cv.SIFT_create(nfeatures=1000)
+sift = cv.SIFT.create(nfeatures=1000)
 kp, des = sift.detectAndCompute(gray, mask=None)
 
 print(f'descriptor size: {sift.descriptorSize()}')
