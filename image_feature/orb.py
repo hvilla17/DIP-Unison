@@ -5,7 +5,7 @@ from print_keypoint import print_keypoint
 image = cv.imread('../images/home.jpg')
 gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
-orb = cv.ORB_create(nfeatures=10000, scaleFactor=2.0)
+orb = cv.ORB.create(nfeatures=10000, scaleFactor=2.0)
 kp, des = orb.detectAndCompute(gray, mask=None)
 
 cv.imwrite('orb-gray.jpg', gray)
