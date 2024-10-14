@@ -1,4 +1,4 @@
-# File: face_detection_write.py
+# File: face_detection_video_write.py
 import cv2 as cv
 
 # input video
