@@ -2,13 +2,14 @@
 import cv2 as cv
 from print_keypoint import print_keypoint
 
+# Note: opencv-contrib-python must be installed
 image = cv.imread('../images/simple.jpg', cv.COLOR_BGR2GRAY)
 
 # Initiate FAST detector
-fast = cv.FastFeatureDetector_create()
+fast = cv.FastFeatureDetector.create()
 
 # Initiate BRIEF extractor
-brief = cv.xfeatures2d.BriefDescriptorExtractor_create()
+brief = cv.xfeatures2d.BriefDescriptorExtractor.create()
 
 # Find the keypoints with STAR
 kp = fast.detect(image, mask=None)
