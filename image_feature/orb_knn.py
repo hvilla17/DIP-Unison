@@ -7,7 +7,7 @@ image0 = cv.imread('../images/nasa_logo.png', cv.IMREAD_GRAYSCALE)
 image1 = cv.imread('../images/kennedy_space_center.jpg', cv.IMREAD_GRAYSCALE)
 
 # Perform ORB feature detection and description
-orb = cv.ORB_create()
+orb = cv.ORB.create()
 kp0, des0 = orb.detectAndCompute(image0, mask=None)
 kp1, des1 = orb.detectAndCompute(image1, mask=None)
 
