@@ -12,7 +12,7 @@ kp0, des0 = orb.detectAndCompute(image0, mask=None)
 kp1, des1 = orb.detectAndCompute(image1, mask=None)
 
 # Perform brute-force KNN matching
-bf = cv.BFMatcher(normType=cv.NORM_HAMMING, crossCheck=False)
+bf = cv.BFMatcher.create(normType=cv.NORM_HAMMING, crossCheck=False)
 pairs_of_matches = bf.knnMatch(queryDescriptors=des0, trainDescriptors=des1, k=2)
 
 # Sort the pairs of matches by distance
