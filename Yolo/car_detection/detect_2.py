@@ -3,13 +3,14 @@
 
 import cv2
 import torch
+from resize import resize_with_aspect_ratio
 
 # Download model from GitHub
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
+model = torch.hub.load('ultralytics/yolov5', 'yolov5l')
 
 # model = torch.hub.load('yolov5', 'yolov5n', source= 'local')
 
-cap = cv2.VideoCapture('slow_traffic_small.mp4')
+cap = cv2.VideoCapture('fire2.mp4')
 
 while True:
     img = cap.read()[1]
@@ -45,6 +46,7 @@ while True:
         cv2.putText(img, text, (x1, y1 - 5), cv2.FONT_HERSHEY_PLAIN, 2,
                     (255, 255, 0), 2)
 
-    cv2.imshow('IMAGE', img)
+    img2 = resize_with_aspect_ratio(img, height=500)
+    cv2.imshow('IMAGE', img2)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
