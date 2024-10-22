@@ -5,7 +5,7 @@ import cv2
 import torch
 
 # Download model from GitHub
-model = torch.hub.load('ultralytics/yolov5', 'yolov5n')
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
 
 # model = torch.hub.load('yolov5', 'yolov5n', source= 'local')
 
