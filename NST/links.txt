@@ -1,0 +1,2 @@
+https://github.com/nazianafis/Neural-Style-Transfer
+https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/cad5020cab595c3bf83a518b7e4d4125/neural_style_tutorial.ipynb
