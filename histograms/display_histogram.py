@@ -4,5 +4,5 @@ from matplotlib import pyplot as plt
 
 image = cv.imread('../images/MyPic.png', cv.IMREAD_GRAYSCALE)
 
-plt.hist(image.ravel(), 256, [0, 256])
+plt.hist(image.ravel(), bins=256, range=(0, 256))
 plt.show()
