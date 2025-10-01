@@ -43,7 +43,7 @@ plt.subplot(2, 3, 4)
 plt.title('Original Histogram', fontsize=12, weight='bold')
 r, g, b = cv.split(image)
 for channel, col in zip([r, g, b], ('r', 'g', 'b')):
-    histr = cv.calcHist([channel], [0], None, [256], [0, 256])
+    histr = cv.calcHist(images=[channel], channels=[0], mask=None, histSize=[256], ranges=[0, 256])
     plt.plot(histr, color=col)
     plt.xlim([0, 256])
 
@@ -51,7 +51,7 @@ plt.subplot(2, 3, 5)
 plt.title('Equalized Histogram RGB', fontsize=12, weight='bold')
 r, g, b = cv.split(image)
 for channel, col in zip([r, g, b], ('r', 'g', 'b')):
-    histr = cv.calcHist([channel], [0], None, [256], [0, 256])
+    histr = cv.calcHist(images=[channel], channels=[0], mask=None, histSize=[256], ranges=[0, 256])
     plt.plot(histr, color=col)
     plt.xlim([0, 256])
 
@@ -59,7 +59,7 @@ plt.subplot(2, 3, 6)
 plt.title('Equalized Histogram YUV', fontsize=12, weight='bold')
 r, g, b = cv.split(image)
 for channel, col in zip([r, g, b], ('r', 'g', 'b')):
-    histr = cv.calcHist([channel], [0], None, [256], [0, 256])
+    histr = cv.calcHist(images=[channel], channels=[0], mask=None, histSize=[256], ranges=[0, 256])
     plt.plot(histr, color=col)
     plt.xlim([0, 256])
 

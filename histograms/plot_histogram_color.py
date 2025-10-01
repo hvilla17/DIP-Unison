@@ -6,7 +6,7 @@ image = cv.imread('../images/MyPic.png')
 
 r, g, b = cv.split(image)
 for channel, col in zip([r, g, b], ('r', 'g', 'b')):
-    hist = cv.calcHist([channel], [0], None, [256], [0, 256])
+    hist = cv.calcHist(images=[channel], channels=[0], mask=None, histSize=[256], ranges=[0, 256])
     plt.plot(hist, color=col)
     plt.xlim([0, 256])
 
