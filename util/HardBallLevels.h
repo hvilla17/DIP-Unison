@@ -1,4 +1,3 @@
-
 /***********************************************************************
  *
  Copyright © 1995 - 1998, 3Com Corporation or its subsidiaries ("3Com").  
@@ -290,4 +289,5 @@ static LevelType levelInfo[levelCount] =
 			 B1, BS, B1, BE, BE, BE, B3, B3, B3}
 		}
 	};
+
 
