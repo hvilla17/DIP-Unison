@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- Copyright © 1995 - 1998, 3Com Corporation or its subsidiaries ("3Com").  
+ Copyright Â© 1995 - 1998, 3Com Corporation or its subsidiaries ("3Com").  
  All rights reserved.
    
  This software may be copied and used solely for developing products for 
@@ -3914,3 +3914,4 @@ DWord		PilotMain(Word cmd, Ptr cmdPBP, Word launchFlags)
 	
 	return 0;
 }
+
