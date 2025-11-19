@@ -1,2 +1,4 @@
 *.c text
+*.c charset=ISO-8859
+*.c charset=UTF-8
 *.c charset=CP1252
