@@ -1,6 +1,7 @@
+
 /***********************************************************************
  *
- Copyright © 1995 - 1998, 3Com Corporation or its subsidiaries ("3Com").  
+ Copyright Â© 1995 - 1998, 3Com Corporation or its subsidiaries ("3Com").  
  All rights reserved.
    
  This software may be copied and used solely for developing products for 
@@ -60,3 +61,4 @@ char *AppResourceList[] = {
 	":Rsc:"RESOURCE_FILE_PREFIX"HardBallPrefs", 
 	""
 	};
+
